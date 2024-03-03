@@ -12,7 +12,7 @@ Before=sleep.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/cec-ctl -d/dev/cec0 -C
-ExecStart=/usr/bin/cec-ctl -d/dev/cec0 --playback
+ExecStart=/usr/bin/cec-ctl -d/dev/cec0 --playback -o "Steam Deck"
 ExecStart=/usr/bin/cec-ctl -d /dev/cec0 --to 0 --standby
 ExecStart=/usr/bin/cec-ctl -d /dev/cec0 -C
 
@@ -29,7 +29,7 @@ After=suspend.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/cec-ctl -d/dev/cec0 -C
-ExecStart=/usr/bin/cec-ctl -d/dev/cec0 --playback
+ExecStart=/usr/bin/cec-ctl -d/dev/cec0 --playback -o "Steam Deck"
 ExecStart=/usr/bin/cec-ctl -d/dev/cec0 --to 0 --image-view-on
 ExecStart=sleep 5
 ExecStart=/usr/bin/cec-ctl -d/dev/cec0 --to 0 --active-source phys-addr=1.0.0.0
